@@ -29,3 +29,31 @@
     top: 50px;
     left: 50px;
 }
+
+.transform-container {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+}
+
+.first-square-transform {
+    width: 100px;
+    height: 100px;
+    background-color: #f4a261;
+    border: 5px solid black;
+    border-radius: 10px;
+    transform: translate(110px, 0px);
+}
+
+.second-square-transform {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(224, 122, 95, 0.5);
+    border: 5px solid black;
+    border-radius: 10px;
+    transform: translate(50px, 50px);
+}
