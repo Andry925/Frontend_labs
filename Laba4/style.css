@@ -1,0 +1,14 @@
+ #ninth-element {
+    color: blue;
+    background-color: red;
+}
+
+ #tenth-element{
+    color: red;
+    background-color: blue;
+}
+
+.invert {
+    filter: invert();
+}
+
