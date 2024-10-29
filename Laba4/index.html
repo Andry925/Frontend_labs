@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тимошенко А.C, ІМ-22</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+<h2>Тимошенко Андрій Сергійович</h2>
+<p>24.06.2004, місто Київ</p>
+<p>Гімназія номер 172 "Нивки" міста Києва
+    Зараз навчаюся в КПІ.</p>
+<p>Хобі:</p>
+<ul>
+    <li>Шахи</li>
+    <li>Плавання</li>
+    <li>Читання</li>
+</ul>
+<p>Улюблені фільми та книги:</p>
+<ol>
+    <li id="ninth-element" onclick="toggleNinthElementColor()"> "Нокдаун", 2005</li>
+    <li id="tenth-element" onclick="toggleTenthElementColor()"> "Как перестать беспокоиться и начать жить", Дейл Карнегі 1948</li>
+</ol>
+<p> Генуя - портове місто на півночі Італії...</p>
+<a href="https://www.visitgenoa.it/en">
+    <img src="./images/genova-piazza-de-ferrari.jpg" alt="Genoa Image" id="main-image"/>
+</a>
+<div id="image-ref">
+    <button onclick="insertImage()">Додати</button>
+    <button id="zoomIn" onclick="adjustImageZoom(this)">Збільшити</button>
+    <button id="zoomOut" onclick="adjustImageZoom(this)">Зменшити</button>
+    <button id="delete" onclick="removeImage()">Видалити</button>
+</div>
+</body>
+</html>
