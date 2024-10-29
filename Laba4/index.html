@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tимошенко А.C, ІМ-22</title>
+    <title>Тимошенко А.C, ІМ-22</title>
     <link rel="stylesheet" href="style.css"/>
-    <script src="./js/script.js">  </script>
+    <script src="./js/script.js"></script>
 </head>
 <body>
 <h2>Тимошенко Андрій Сергійович</h2>
@@ -19,23 +19,18 @@
 </ul>
 <p>Улюблені фільми та книги:</p>
 <ol>
-    <li>"Піймай мене якщо зможеш", 2002</li>
-    <li id="ninth-element" onclick="firstElementColorChange()"> "Нокдаун", 2005</li>
-    <li id="tenth-element" onclick="secondElementColorChange()"> "Как перестать беспокоиться и начать жить", Дейл Карнегі 1948</li>
+    <li id="ninth-element" onclick="toggleNinthElementColor()"> "Нокдаун", 2005</li>
+    <li id="tenth-element" onclick="toggleTenthElementColor()"> "Как перестать беспокоиться и начать жить", Дейл Карнегі 1948</li>
 </ol>
-<p> Генуя - портове місто на півночі Італії, головне місто провінції Генуя та регіону Лігурія, на відстані близько
-    410 км на
-    північний захід від Рима. Генуя розміщена на березі Генуезької затоки</p>
+<p> Генуя - портове місто на півночі Італії...</p>
 <a href="https://www.visitgenoa.it/en">
-    <img src="./images/genova-piazza-de-ferrari.jpg"
-         alt="Genoa Image"/>
+    <img src="./images/genova-piazza-de-ferrari.jpg" alt="Genoa Image" id="main-image"/>
 </a>
-<div>
-    <button onclick="">Додати</button>
-    <button id="ZoomIn" onclick="">Збільшити</button>
-    <button id="ZoomOut" onclick="">Зменшити</button>
-    <button onclick="">Видалити</button>
+<div id="image-ref">
+    <button onclick="insertImage()">Додати</button>
+    <button id="zoomIn" onclick="adjustImageZoom(this)">Збільшити</button>
+    <button id="zoomOut" onclick="adjustImageZoom(this)">Зменшити</button>
+    <button id="delete" onclick="removeImage()">Видалити</button>
 </div>
-
 </body>
 </html>
