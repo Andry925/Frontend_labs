@@ -1,23 +1,23 @@
 const validate = (event) => {
     event.preventDefault();
-    const inputs = document.getElementsByTagName('input');
+    const inputs = document.querySelectorAll('input[type="text"], input[type="email"]');
     let allValid = true;
 
-    for (let element of inputs) {
-        const regexPattern = element.getAttribute('regex');
+    inputs.forEach(input => {
+        const regexPattern = input.getAttribute('regex');
         const regex = new RegExp(`^${regexPattern}$`);
-        const value = element.value;
-        const errorMessage = document.getElementById(`error-${element.id}`);
+        const value = input.value;
+        const errorMessage = document.getElementById(`error-${input.id}`);
 
         if (!regex.test(value)) {
-            element.classList.add('error');
+            input.classList.add('error');
             errorMessage.style.display = 'block';
             allValid = false;
         } else {
-            element.classList.remove('error');
+            input.classList.remove('error');
             errorMessage.style.display = 'none';
         }
-    }
+    });
 
     if (allValid) {
         displayValidatedData();
@@ -25,11 +25,11 @@ const validate = (event) => {
 };
 
 const displayValidatedData = () => {
-    document.getElementById('validated full-name').innerText = 'ПІБ: ' + document.getElementById('full-name').value;
-    document.getElementById('validated group number').innerText = 'Група: ' + document.getElementById('group-number').value;
-    document.getElementById('validated id-number').innerText = 'Номер id-картки: ' + document.getElementById('id-number').value;
-    document.getElementById('validated birthday').innerText = 'День народження: ' + document.getElementById('birthday').value;
-    document.getElementById('validated email').innerText = 'Email: ' + document.getElementById('email').value;
+    document.getElementById('validated-full-name').innerText = 'ПІБ: ' + document.getElementById('full-name').value;
+    document.getElementById('validated-group-number').innerText = 'Група: ' + document.getElementById('group-number').value;
+    document.getElementById('validated-id-number').innerText = 'Номер id-картки: ' + document.getElementById('id-number').value;
+    document.getElementById('validated-birthday').innerText = 'День народження: ' + document.getElementById('birthday').value;
+    document.getElementById('validated-email').innerText = 'Email: ' + document.getElementById('email').value;
     document.getElementById('correct-data').style.display = 'block';
 };
 
@@ -72,9 +72,9 @@ const changeColumnColors = (startingCell) => {
     const cellIndex = startingCell.cellIndex;
     const color = getRandomColor();
 
-    for (let i = cellIndex; i < table.rows[0].cells.length; i += 2) {
-        for (let row of table.rows) {
-            row.cells[i].style.backgroundColor = color;
+    for (let row of table.rows) {
+        if (row.cells[cellIndex]) {
+            row.cells[cellIndex].style.backgroundColor = color;
         }
     }
 };
