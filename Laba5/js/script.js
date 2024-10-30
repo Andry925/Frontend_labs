@@ -41,21 +41,42 @@ const getRandomColor = () => {
     }
     return color;
 };
+
 const initializeColorPickerAndHoverEffect = () => {
     const cell = document.getElementById('my-cell-data');
     const colorPicker = document.getElementById('color-picker');
+
     cell.addEventListener('mouseover', () => {
         cell.style.backgroundColor = getRandomColor();
     });
+
     cell.addEventListener('click', () => {
         colorPicker.click();
     });
+
     colorPicker.addEventListener('input', (event) => {
         cell.style.backgroundColor = event.target.value;
     });
+
     colorPicker.addEventListener('change', (event) => {
         cell.style.backgroundColor = event.target.value;
     });
+
+    cell.addEventListener('dblclick', () => {
+        changeColumnColors(cell);
+    });
+};
+
+const changeColumnColors = (startingCell) => {
+    const table = startingCell.closest('table');
+    const cellIndex = startingCell.cellIndex;
+    const color = getRandomColor();
+
+    for (let i = cellIndex; i < table.rows[0].cells.length; i += 2) {
+        for (let row of table.rows) {
+            row.cells[i].style.backgroundColor = color;
+        }
+    }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
