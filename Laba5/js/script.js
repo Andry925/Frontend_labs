@@ -32,3 +32,32 @@ const displayValidatedData = () => {
     document.getElementById('validated email').innerText = 'Email: ' + document.getElementById('email').value;
     document.getElementById('correct-data').style.display = 'block';
 };
+
+const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
+const initializeColorPickerAndHoverEffect = () => {
+    const cell = document.getElementById('my-cell-data');
+    const colorPicker = document.getElementById('color-picker');
+    cell.addEventListener('mouseover', () => {
+        cell.style.backgroundColor = getRandomColor();
+    });
+    cell.addEventListener('click', () => {
+        colorPicker.click();
+    });
+    colorPicker.addEventListener('input', (event) => {
+        cell.style.backgroundColor = event.target.value;
+    });
+    colorPicker.addEventListener('change', (event) => {
+        cell.style.backgroundColor = event.target.value;
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeColorPickerAndHoverEffect();
+});

@@ -52,3 +52,10 @@ input.error {
     font-size: 0.9em;
 }
 
+#main-table {
+    border: 1px;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
