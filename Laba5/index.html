@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тимошенко А.C, ІМ-22</title>
+    <link rel="stylesheet" href="./static/style.css"/>
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
+
+<div id="main-form">
+    <form id="user-form" onsubmit="validate(event)">
+        <input type="text" id="full-name" placeholder="ПІБ"
+               regex="[а-яА-ЯіїєґІЇЄҐ]+ [а-яА-ЯіїєґІЇЄҐA-Z]\.[а-яА-ЯіїєґІЇЄҐA-Z]" example="Тимошенко А.С"/>
+        <span class="error-message" id="error-full-name">Приклад: Тимошенко А.С</span>
+
+        <input type="text" id="group-number" placeholder="Група" regex="[а-яА-ЯіїєґІЇЄҐ]{2}-\d{2}" example="ІМ-22"/>
+        <span class="error-message" id="error-group-number">Приклад: ІМ-22</span>
+
+        <input type="text" id="id-number" placeholder="Номер id-картки" regex="[а-яА-ЯіїєґІЇЄҐ]{2} №\d{6}"
+               example="АM №345678"/>
+        <span class="error-message" id="error-id-number">Приклад: АМ №345678</span>
+
+        <input type="text" id="birthday" placeholder="День народження" regex="\d{2}\.\d{2}\.\d{4}"
+               example="24.06.2004"/>
+        <span class="error-message" id="error-birthday">Приклад: 24.06.2004</span>
+
+        <input type="email" id="email" placeholder="Email" regex="[a-z]+@[a-z]+\.com" example="example@gmail.com"/>
+        <span class="error-message" id="error-email">Приклад: example@gmail.com</span>
+
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="correct-data">
+    <h1 id="heading">Введені дані</h1>
+    <h2 id="validated full-name">ПІБ</h2>
+    <h2 id="validated group number">Група</h2>
+    <h2 id="validated id-number">Номер id-картки</h2>
+    <h2 id="validated birthday">День народження</h2>
+    <h2 id="validated email">Email</h2>
+</div>
+
+</body>
+</html>
