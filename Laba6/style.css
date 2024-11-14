@@ -1,0 +1,88 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+    display: grid;
+    gap: 40px;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .button-section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .download-btn {
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+  }
+  
+  .download-btn:active {
+    background-color: #388e3c;
+    transform: scale(1);
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: 2px solid #4caf50;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card-content {
+    color: #666;
+    line-height: 1.6;
+  }
+  
