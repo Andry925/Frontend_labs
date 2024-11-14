@@ -1,3 +1,4 @@
+
 let isActivatedFetch = false;
 
 const displayMessage = (message, type) => {
