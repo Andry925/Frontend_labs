@@ -35,6 +35,7 @@ const fetchData = async (context) => {
   context.disabled = true;
 
   if (isActivatedFetch) {
+
     displayMessage("You have  already fetched the data. Refresh the page and try again");
   } else {
     for (let i = 0; i < 5; i++) {
