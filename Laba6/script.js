@@ -1,3 +1,4 @@
+
 let isActivatedFetch = false;
 
 const displayMessage = (message, type) => {
@@ -34,7 +35,8 @@ const fetchData = async (context) => {
   context.disabled = true;
 
   if (isActivatedFetch) {
-    displayMessage("You already fetched the data. Refresh the page and try again");
+
+    displayMessage("You have  already fetched the data. Refresh the page and try again");
   } else {
     for (let i = 0; i < 5; i++) {
       try {
